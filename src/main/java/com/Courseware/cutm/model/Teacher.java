@@ -1,10 +1,11 @@
 package com.Courseware.cutm.model;
 
 import jakarta.persistence.*;
+import org.springframework.http.HttpStatusCode;
 
 @Entity
 @Table(name = "teacherdetails")
-public class Teacher {
+public class Teacher{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +14,12 @@ public class Teacher {
     private String address;
 
     public Teacher() {
+    }
+
+    public Teacher(int id, String name, String address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
     }
 
     public int getId() {

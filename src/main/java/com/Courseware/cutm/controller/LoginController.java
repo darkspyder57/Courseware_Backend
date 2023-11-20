@@ -14,6 +14,8 @@ import java.util.List;
 @RequestMapping("/rest/login")
 public class LoginController {
 
+
+    @Autowired
     private LoginService loginService;
 
     @Autowired
@@ -31,12 +33,12 @@ public class LoginController {
         return loginService.getAllLoginDetail();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Login> getLoginDetailById(@PathVariable("id") long LoginId){
         return new ResponseEntity<Login>(loginService.getLoginDetailById(LoginId),HttpStatus.OK);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<Login> updateLoginDetails(@PathVariable("id") long id,@RequestBody Login loginCourseware)
     {
         return new ResponseEntity<Login>(loginService.updateLoginDetails(loginCourseware,id),HttpStatus.OK);

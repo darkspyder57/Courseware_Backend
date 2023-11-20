@@ -14,6 +14,16 @@ public class Course {
 
     private String coursecategory;
 
+    public Course(int courseid, String coursename, String coursecategory) {
+        this.courseid = courseid;
+        this.coursename = coursename;
+        this.coursecategory = coursecategory;
+    }
+
+    public Course() {
+    }
+
+
     public int getCourseid() {
         return courseid;
     }
@@ -36,5 +46,14 @@ public class Course {
 
     public void setCoursecategory(String coursecategory) {
         this.coursecategory = coursecategory;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseid=" + courseid +
+                ", coursename='" + coursename + '\'' +
+                ", coursecategory='" + coursecategory + '\'' +
+                '}';
     }
 }

@@ -5,9 +5,11 @@ import com.Courseware.cutm.model.Login;
 import com.Courseware.cutm.repository.LoginRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
+@Component
 public class LoginServiceImpl implements LoginService {
     private LoginRepository loginRepository;
 
